@@ -9,13 +9,16 @@ using namespace std;
 
 int main()
 {
-    Board B;
-    B.setColor(sf::Color::Yellow); 
+    Board B;  //Create the borad 
+
+    B.setColor(sf::Color::Yellow);  //Set Yellow as a color in the board
     
-    Game G;
+    Game G;   //Create a "Game"
 
-    Sound S;
+    Sound S;    //Initialize the sound
 
+
+    //Variable declarations
     int positionX;
     int positionY;
     int position;
@@ -23,7 +26,7 @@ int main()
     int tour =0;
     int rejouer=1;
 
-    while(rejouer==1)
+    while(rejouer==1) 
     {
         G.reset();
         sf::RenderWindow window(sf::VideoMode(W,H), "TicTacToe");
@@ -33,21 +36,21 @@ int main()
             sf::Event event;
             while (window.pollEvent(event))
             {
-                if (event.type == sf::Event::Closed)
+                if (event.type == sf::Event::Closed) //if the user close the window
                     window.close();
             }
             //window.clear(sf::Color::Black);
-            if(tour%2==0 && sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            if(tour%2==0 && sf::Mouse::isButtonPressed(sf::Mouse::Left)) //if the user click on the screen 
             {   
-                S.playSoundClick();
+                S.playSoundClick();  //Click sound
                 positionX = sf::Mouse::getPosition(window).x;
                 positionY = sf::Mouse::getPosition(window).y;
-                position = convertMousePosition(positionX,positionY);
+                position = convertMousePosition(positionX,positionY); //Recover the position
                 if(position!=-1) 
                 {   
                     if(G.isValidePostition(position)==1)
                     {
-                        G.actualisationElements(position,1 );
+                        G.actualisationElements(position,1 ); //Cross
                         tour=tour+1;
                     }
                 }
@@ -62,7 +65,7 @@ int main()
                 {   
                     if(G.isValidePostition(position)==1)
                     {
-                        G.actualisationElements(position,2);
+                        G.actualisationElements(position,2); //Dot
                         tour=tour+1;
                     }
                 }

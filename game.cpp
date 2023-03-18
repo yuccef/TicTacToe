@@ -93,14 +93,12 @@ void Game::display(sf::RenderWindow& window)
     {
         if(element[i]==1)
         {
-            son.playSoundClick();
             C.display(window,i);
 
         }
         if(element[i]==2)
         {
             D.display(window,i);
-            son.playSoundClick();
 
             
         }
@@ -137,7 +135,7 @@ int Game::rejouer(int win)
     if (win==1) 
     {
         text.setString("victoire des Croix !");
-        son.playSoundWin();
+        son.playSoundWin(); //Win sound
 
     } 
     if(win==2) 
@@ -179,13 +177,13 @@ int Game::rejouer(int win)
         sf::Event event;
         while (window.pollEvent(event)) 
         {
-            if (event.type == sf::Event::Closed) 
+            if (event.type == sf::Event::Closed)  //if the user close the window
             {
                 window.close();
             }
             if (event.type == sf::Event::MouseButtonPressed) 
             {
-                if (event.mouseButton.button == sf::Mouse::Left) 
+                if (event.mouseButton.button == sf::Mouse::Left)  //if the user click on the screen 
                 {
                     if (quit_button.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) 
                     {
