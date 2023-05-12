@@ -2,7 +2,7 @@
 #define FORMES_H
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "Board.hpp"
+#include "../Board/Board.hpp"
 
 #define RADIUS 60
 

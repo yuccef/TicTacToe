@@ -3,8 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "game.hpp"
-#include "figures.hpp"
-#include"sound.hpp"
+#include "../Figures/figures.hpp"
+#include"../sound/sound.hpp"
 
 
 using namespace std;

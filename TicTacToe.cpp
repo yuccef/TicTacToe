@@ -1,8 +1,8 @@
 #include <iostream>
-#include "board.hpp"
-#include "figures.hpp"
-#include "game.hpp"
-#include"sound.hpp"
+#include "./board/board.hpp"
+#include "./figures/figures.hpp"
+#include "./game/game.hpp"
+#include"./sound/sound.hpp"
 
 using namespace std;
 
